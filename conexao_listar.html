@@ -51,7 +51,7 @@
         </div>
 
         <div class="code-container">
-            <button class="copy-button" onclick="copyToClipboard()">Copy code</button>
+            <button class="copy-button" onclick="copyToClipboard(this)">Copy code</button>
             <pre><code id="code-block" class="language-javascript">
                 &lt;?php
                 $servername = "localhost";
@@ -75,14 +75,14 @@
         </div>
         <div class="py-5">
             <h6>
-                Agora para listar todos os itens do banco de dados usamos a variável de conexão ($conn) e listamos os registros.
+                Agora para listar todos os itens do banco de dados usamos a variável $sql que guarda o array com os registros.
                 Crie um arquivo index.php para listar os registros provinientes do banco de dados.
                 Agora para incluir o arquivo de conexão, perceba que na primeira linha do arquivo index.php é utilizada a função include.
             </h6>
         </div>
     
         <div class="code-container">
-            <button class="copy-button" onclick="copyToClipboard()">Copy code</button>
+            <button class="copy-button" onclick="copyToClipboard(this)">Copy code</button>
             <pre><code id="code-block" class="language-html">
                 &lt;?php
                     include "conexao.php";
@@ -142,9 +142,12 @@
             .replace(/'/g, '&#039;');
     }
 
-    function copyToClipboard() {
-        // Get the text from the code block
-        const codeBlock = document.getElementById("code-block").textContent;
+    function copyToClipboard(element) {
+        // Get the parent div with class 'code-container'
+        const parentDiv = element.closest('.code-container');
+
+        // Get the code block from the parent div
+        const codeBlock = parentDiv.querySelector('code').textContent;
 
         // Create a temporary textarea element to hold the text
         const tempTextarea = document.createElement("textarea");
@@ -161,7 +164,7 @@
         document.body.removeChild(tempTextarea);
 
         // Change the button text to indicate success
-        const copyButton = document.querySelector(".copy-button");
+        const copyButton = element;
         copyButton.textContent = "Copied!";
         
         // Reset button text after 1 second
