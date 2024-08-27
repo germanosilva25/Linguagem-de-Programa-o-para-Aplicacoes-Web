@@ -85,8 +85,3 @@ PHP é uma linguagem poderosa e flexível, ideal para o desenvolvimento de aplic
 
 
 
-
-```javascript
-npx create-expo-app@latest
-```
-
