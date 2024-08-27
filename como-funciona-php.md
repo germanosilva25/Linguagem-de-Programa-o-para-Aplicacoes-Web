@@ -83,3 +83,11 @@ $conn->close();
 ### Conclusão
 PHP é uma linguagem poderosa e flexível, ideal para o desenvolvimento de aplicações web dinâmicas. Sua capacidade de se integrar com bancos de dados, manipular arquivos e gerar conteúdo dinâmico o torna uma escolha popular para desenvolvedores web em todo o mundo.
 
+
+
+
+```
+javascript
+npx create-expo-app@latest
+```
+
